@@ -16,6 +16,7 @@ import Favorites from "./pages/Favorites";
 import {Api} from "./Api";
 import Ctx from "./Ctx";
 import Post from "./pages/Post";
+import Radio from "./components/Radio/Radio";
 
 
 const PATH = "/";
@@ -119,6 +120,7 @@ const App = () => {
                         <Route path={PATH + "posts/:id"} element={<Post/>}/>
                         <Route path={PATH + "add"} element={<AddPost/>}/>
                         <Route path={PATH + "favorites"} element={<Favorites/>}/>
+                        <Route path={PATH + "radio"} element={<Radio />}/>
                     </Routes>
                     
                 </main>

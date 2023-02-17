@@ -6,7 +6,7 @@ import Ctx from "../../Ctx";
 import {PlusCircleFill, DoorOpenFill, BookmarkHeartFill} from "react-bootstrap-icons";
 
 function Header ()  {
-    const {user,  setModalActive, PATH} = useContext(Ctx);
+    const {user, favorites,  setModalActive, PATH} = useContext(Ctx);
 
     const logIn = (e) => {
         e.preventDefault();
@@ -19,6 +19,7 @@ function Header ()  {
         <nav className="menu">
            
             {user && <Link to={PATH + "favorites"} className="badge-link">
+                {favorites.length>0 && <span>{favorites.length}</span>}
                 <BookmarkHeartFill style={{fontSize: "20px"}}/>
             </Link>}
             {user && user.name && <Link to={PATH + "profile"}>{user.name}</Link>}
